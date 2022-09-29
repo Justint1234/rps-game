@@ -9,6 +9,9 @@ choiceBtn.forEach(button => button.addEventListener('click', () => {
 
     player = button.textContent;
     computerTurn();
+    playerText.textContent = `Player: ${player}`;
+    computerText.textContent = `Computer: ${computer}`;
+    resultText.textContent = checkWinner();
 }));
 
 function computerTurn() {
@@ -27,3 +30,20 @@ function computerTurn() {
 
     }
 }
+
+function checkWinner() {
+    if (player == computer) {
+        return "Gotcha!"
+    }
+    else if (computer == 'Rock') {
+        return (player == 'Paper') ? 'You are good' : 'You Suck'
+    }
+    else if (computer == 'Paper') {
+        return (player == 'Scissors') ? 'You are good' : 'You Suck'
+    }
+    else if (computer == 'Scissors') {
+        return (player == 'Rock') ? 'You are good' : 'You Suck'
+    }
+}
+
+
